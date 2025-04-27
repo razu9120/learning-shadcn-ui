@@ -5,6 +5,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { useState } from "react";
 import { DatePicker } from "@/components/ui/date-picker";
 import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 
 export default function Home() {
   // 日付の状態管理
@@ -45,6 +46,18 @@ export default function Home() {
       </div>
       <div className="mt-8">
         <Textarea />
+      </div>
+      <div className="mt-8">
+        <Select>
+          <SelectTrigger className="w-[200px]">
+            <SelectValue placeholder="選択してください" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="1">1</SelectItem>
+            <SelectItem value="2">2</SelectItem>
+            <SelectItem value="3">3</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
     </main>
   );
