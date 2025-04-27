@@ -4,13 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { useState } from "react";
 import { DatePicker } from "@/components/ui/date-picker";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function Home() {
   // 日付の状態管理
   const [date, setDate] = useState<Date | undefined>(new Date());
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex flex-col p-24">
       <div className="flex flex-col items-center gap-4">
         <h1 className="text-2xl font-bold">DatePickerの例</h1>
         <DatePicker date={date} setDate={setDate} />
@@ -18,7 +19,6 @@ export default function Home() {
           <p>選択された日付: {date ? date.toLocaleDateString('ja-JP') : '未選択'}</p>
         </div>
       </div>
-
       <div className="mt-8">
         <h2 className="text-xl font-bold mb-4">テーブルの例</h2>
         <Table>
@@ -39,6 +39,12 @@ export default function Home() {
             </TableRow>
           </TableBody>
         </Table>
+      </div>
+      <div className="mt-8">
+        <Button>ボタン</Button>
+      </div>
+      <div className="mt-8">
+        <Textarea />
       </div>
     </main>
   );
